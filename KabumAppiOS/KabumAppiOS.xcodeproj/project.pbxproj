@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		304AD2CF26D3200C00915013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD2CE26D3200C00915013 /* AppDelegate.swift */; };
+		304AD2D126D3200C00915013 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD2D026D3200C00915013 /* SceneDelegate.swift */; };
+		304AD2D326D3200C00915013 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD2D226D3200C00915013 /* ViewController.swift */; };
+		304AD2D826D3200D00915013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 304AD2D726D3200D00915013 /* Assets.xcassets */; };
+		304AD2E626D3200E00915013 /* KabumAppiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD2E526D3200E00915013 /* KabumAppiOSTests.swift */; };
+		304AD2F126D3200E00915013 /* KabumAppiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD2F026D3200E00915013 /* KabumAppiOSUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		304AD2E226D3200E00915013 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 304AD2C326D3200C00915013 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 304AD2CA26D3200C00915013;
+			remoteInfo = KabumAppiOS;
+		};
+		304AD2ED26D3200E00915013 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 304AD2C326D3200C00915013 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 304AD2CA26D3200C00915013;
+			remoteInfo = KabumAppiOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		304AD2CB26D3200C00915013 /* KabumAppiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KabumAppiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		304AD2CE26D3200C00915013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		304AD2D026D3200C00915013 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		304AD2D226D3200C00915013 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		304AD2D726D3200D00915013 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		304AD2DC26D3200D00915013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		304AD2E126D3200E00915013 /* KabumAppiOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KabumAppiOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		304AD2E526D3200E00915013 /* KabumAppiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KabumAppiOSTests.swift; sourceTree = "<group>"; };
+		304AD2E726D3200E00915013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		304AD2EC26D3200E00915013 /* KabumAppiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KabumAppiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		304AD2F026D3200E00915013 /* KabumAppiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KabumAppiOSUITests.swift; sourceTree = "<group>"; };
+		304AD2F226D3200E00915013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		304AD2C826D3200C00915013 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		304AD2DE26D3200E00915013 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		304AD2E926D3200E00915013 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		304AD2C226D3200C00915013 = {
+			isa = PBXGroup;
+			children = (
+				304AD2CD26D3200C00915013 /* KabumAppiOS */,
+				304AD2E426D3200E00915013 /* KabumAppiOSTests */,
+				304AD2EF26D3200E00915013 /* KabumAppiOSUITests */,
+				304AD2CC26D3200C00915013 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		304AD2CC26D3200C00915013 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				304AD2CB26D3200C00915013 /* KabumAppiOS.app */,
+				304AD2E126D3200E00915013 /* KabumAppiOSTests.xctest */,
+				304AD2EC26D3200E00915013 /* KabumAppiOSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		304AD2CD26D3200C00915013 /* KabumAppiOS */ = {
+			isa = PBXGroup;
+			children = (
+				304AD30126D320B000915013 /* Resources */,
+				304AD30026D3207E00915013 /* Model */,
+				304AD2FF26D3207700915013 /* View */,
+				304AD2FE26D3206400915013 /* Controller */,
+				304AD2CE26D3200C00915013 /* AppDelegate.swift */,
+				304AD2D026D3200C00915013 /* SceneDelegate.swift */,
+				304AD2D226D3200C00915013 /* ViewController.swift */,
+				304AD2DC26D3200D00915013 /* Info.plist */,
+			);
+			path = KabumAppiOS;
+			sourceTree = "<group>";
+		};
+		304AD2E426D3200E00915013 /* KabumAppiOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				304AD2E526D3200E00915013 /* KabumAppiOSTests.swift */,
+				304AD2E726D3200E00915013 /* Info.plist */,
+			);
+			path = KabumAppiOSTests;
+			sourceTree = "<group>";
+		};
+		304AD2EF26D3200E00915013 /* KabumAppiOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				304AD2F026D3200E00915013 /* KabumAppiOSUITests.swift */,
+				304AD2F226D3200E00915013 /* Info.plist */,
+			);
+			path = KabumAppiOSUITests;
+			sourceTree = "<group>";
+		};
+		304AD2FE26D3206400915013 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		304AD2FF26D3207700915013 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		304AD30026D3207E00915013 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		304AD30126D320B000915013 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				304AD2D726D3200D00915013 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		304AD2CA26D3200C00915013 /* KabumAppiOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 304AD2F526D3200E00915013 /* Build configuration list for PBXNativeTarget "KabumAppiOS" */;
+			buildPhases = (
+				304AD2C726D3200C00915013 /* Sources */,
+				304AD2C826D3200C00915013 /* Frameworks */,
+				304AD2C926D3200C00915013 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KabumAppiOS;
+			productName = KabumAppiOS;
+			productReference = 304AD2CB26D3200C00915013 /* KabumAppiOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		304AD2E026D3200E00915013 /* KabumAppiOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 304AD2F826D3200E00915013 /* Build configuration list for PBXNativeTarget "KabumAppiOSTests" */;
+			buildPhases = (
+				304AD2DD26D3200E00915013 /* Sources */,
+				304AD2DE26D3200E00915013 /* Frameworks */,
+				304AD2DF26D3200E00915013 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				304AD2E326D3200E00915013 /* PBXTargetDependency */,
+			);
+			name = KabumAppiOSTests;
+			productName = KabumAppiOSTests;
+			productReference = 304AD2E126D3200E00915013 /* KabumAppiOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		304AD2EB26D3200E00915013 /* KabumAppiOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 304AD2FB26D3200E00915013 /* Build configuration list for PBXNativeTarget "KabumAppiOSUITests" */;
+			buildPhases = (
+				304AD2E826D3200E00915013 /* Sources */,
+				304AD2E926D3200E00915013 /* Frameworks */,
+				304AD2EA26D3200E00915013 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				304AD2EE26D3200E00915013 /* PBXTargetDependency */,
+			);
+			name = KabumAppiOSUITests;
+			productName = KabumAppiOSUITests;
+			productReference = 304AD2EC26D3200E00915013 /* KabumAppiOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		304AD2C326D3200C00915013 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					304AD2CA26D3200C00915013 = {
+						CreatedOnToolsVersion = 12.5.1;
+					};
+					304AD2E026D3200E00915013 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 304AD2CA26D3200C00915013;
+					};
+					304AD2EB26D3200E00915013 = {
+						CreatedOnToolsVersion = 12.5.1;
+						TestTargetID = 304AD2CA26D3200C00915013;
+					};
+				};
+			};
+			buildConfigurationList = 304AD2C626D3200C00915013 /* Build configuration list for PBXProject "KabumAppiOS" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 304AD2C226D3200C00915013;
+			productRefGroup = 304AD2CC26D3200C00915013 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				304AD2CA26D3200C00915013 /* KabumAppiOS */,
+				304AD2E026D3200E00915013 /* KabumAppiOSTests */,
+				304AD2EB26D3200E00915013 /* KabumAppiOSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		304AD2C926D3200C00915013 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				304AD2D826D3200D00915013 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		304AD2DF26D3200E00915013 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		304AD2EA26D3200E00915013 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		304AD2C726D3200C00915013 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				304AD2D326D3200C00915013 /* ViewController.swift in Sources */,
+				304AD2CF26D3200C00915013 /* AppDelegate.swift in Sources */,
+				304AD2D126D3200C00915013 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		304AD2DD26D3200E00915013 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				304AD2E626D3200E00915013 /* KabumAppiOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		304AD2E826D3200E00915013 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				304AD2F126D3200E00915013 /* KabumAppiOSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		304AD2E326D3200E00915013 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 304AD2CA26D3200C00915013 /* KabumAppiOS */;
+			targetProxy = 304AD2E226D3200E00915013 /* PBXContainerItemProxy */;
+		};
+		304AD2EE26D3200E00915013 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 304AD2CA26D3200C00915013 /* KabumAppiOS */;
+			targetProxy = 304AD2ED26D3200E00915013 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		304AD2F326D3200E00915013 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		304AD2F426D3200E00915013 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		304AD2F626D3200E00915013 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34KZBHS44B;
+				INFOPLIST_FILE = KabumAppiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Apple-Developer-Academy-PUC-RIO.KabumAppiOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		304AD2F726D3200E00915013 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34KZBHS44B;
+				INFOPLIST_FILE = KabumAppiOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Apple-Developer-Academy-PUC-RIO.KabumAppiOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		304AD2F926D3200E00915013 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34KZBHS44B;
+				INFOPLIST_FILE = KabumAppiOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Apple-Developer-Academy-PUC-RIO.KabumAppiOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KabumAppiOS.app/KabumAppiOS";
+			};
+			name = Debug;
+		};
+		304AD2FA26D3200E00915013 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34KZBHS44B;
+				INFOPLIST_FILE = KabumAppiOSTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Apple-Developer-Academy-PUC-RIO.KabumAppiOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KabumAppiOS.app/KabumAppiOS";
+			};
+			name = Release;
+		};
+		304AD2FC26D3200E00915013 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34KZBHS44B;
+				INFOPLIST_FILE = KabumAppiOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Apple-Developer-Academy-PUC-RIO.KabumAppiOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KabumAppiOS;
+			};
+			name = Debug;
+		};
+		304AD2FD26D3200E00915013 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 34KZBHS44B;
+				INFOPLIST_FILE = KabumAppiOSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Apple-Developer-Academy-PUC-RIO.KabumAppiOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = KabumAppiOS;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		304AD2C626D3200C00915013 /* Build configuration list for PBXProject "KabumAppiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				304AD2F326D3200E00915013 /* Debug */,
+				304AD2F426D3200E00915013 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		304AD2F526D3200E00915013 /* Build configuration list for PBXNativeTarget "KabumAppiOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				304AD2F626D3200E00915013 /* Debug */,
+				304AD2F726D3200E00915013 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		304AD2F826D3200E00915013 /* Build configuration list for PBXNativeTarget "KabumAppiOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				304AD2F926D3200E00915013 /* Debug */,
+				304AD2FA26D3200E00915013 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		304AD2FB26D3200E00915013 /* Build configuration list for PBXNativeTarget "KabumAppiOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				304AD2FC26D3200E00915013 /* Debug */,
+				304AD2FD26D3200E00915013 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 304AD2C326D3200C00915013 /* Project object */;
+}
