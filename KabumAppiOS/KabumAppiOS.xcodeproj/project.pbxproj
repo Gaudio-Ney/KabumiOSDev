@@ -13,6 +13,11 @@
 		304AD2D826D3200D00915013 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 304AD2D726D3200D00915013 /* Assets.xcassets */; };
 		304AD2E626D3200E00915013 /* KabumAppiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD2E526D3200E00915013 /* KabumAppiOSTests.swift */; };
 		304AD2F126D3200E00915013 /* KabumAppiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD2F026D3200E00915013 /* KabumAppiOSUITests.swift */; };
+		304AD30326D32BA500915013 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD30226D32BA500915013 /* ProductModel.swift */; };
+		304AD30626D32BCB00915013 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD30526D32BCB00915013 /* HomeView.swift */; };
+		304AD30D26D42FF500915013 /* CodableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD30C26D42FF500915013 /* CodableExtensions.swift */; };
+		304AD30F26D4300300915013 /* JsonStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD30E26D4300300915013 /* JsonStructs.swift */; };
+		304AD31126D433BC00915013 /* JsonRequestDump in Resources */ = {isa = PBXBuildFile; fileRef = 304AD31026D433BB00915013 /* JsonRequestDump */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +50,11 @@
 		304AD2EC26D3200E00915013 /* KabumAppiOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KabumAppiOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		304AD2F026D3200E00915013 /* KabumAppiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KabumAppiOSUITests.swift; sourceTree = "<group>"; };
 		304AD2F226D3200E00915013 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		304AD30226D32BA500915013 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		304AD30526D32BCB00915013 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		304AD30C26D42FF500915013 /* CodableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodableExtensions.swift; sourceTree = "<group>"; };
+		304AD30E26D4300300915013 /* JsonStructs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JsonStructs.swift; sourceTree = "<group>"; };
+		304AD31026D433BB00915013 /* JsonRequestDump */ = {isa = PBXFileReference; lastKnownFileType = text; path = JsonRequestDump; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,14 +105,12 @@
 		304AD2CD26D3200C00915013 /* KabumAppiOS */ = {
 			isa = PBXGroup;
 			children = (
+				304AD2DC26D3200D00915013 /* Info.plist */,
+				304AD30726D32E9000915013 /* API */,
 				304AD30126D320B000915013 /* Resources */,
 				304AD30026D3207E00915013 /* Model */,
 				304AD2FF26D3207700915013 /* View */,
 				304AD2FE26D3206400915013 /* Controller */,
-				304AD2CE26D3200C00915013 /* AppDelegate.swift */,
-				304AD2D026D3200C00915013 /* SceneDelegate.swift */,
-				304AD2D226D3200C00915013 /* ViewController.swift */,
-				304AD2DC26D3200D00915013 /* Info.plist */,
 			);
 			path = KabumAppiOS;
 			sourceTree = "<group>";
@@ -128,6 +136,7 @@
 		304AD2FE26D3206400915013 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				304AD2D226D3200C00915013 /* ViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -135,6 +144,7 @@
 		304AD2FF26D3207700915013 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				304AD30526D32BCB00915013 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -142,6 +152,7 @@
 		304AD30026D3207E00915013 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				304AD30226D32BA500915013 /* ProductModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -149,9 +160,21 @@
 		304AD30126D320B000915013 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				304AD31026D433BB00915013 /* JsonRequestDump */,
+				304AD2D026D3200C00915013 /* SceneDelegate.swift */,
+				304AD2CE26D3200C00915013 /* AppDelegate.swift */,
 				304AD2D726D3200D00915013 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		304AD30726D32E9000915013 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				304AD30E26D4300300915013 /* JsonStructs.swift */,
+				304AD30C26D42FF500915013 /* CodableExtensions.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +280,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				304AD31126D433BC00915013 /* JsonRequestDump in Resources */,
 				304AD2D826D3200D00915013 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,6 +309,10 @@
 				304AD2D326D3200C00915013 /* ViewController.swift in Sources */,
 				304AD2CF26D3200C00915013 /* AppDelegate.swift in Sources */,
 				304AD2D126D3200C00915013 /* SceneDelegate.swift in Sources */,
+				304AD30626D32BCB00915013 /* HomeView.swift in Sources */,
+				304AD30326D32BA500915013 /* ProductModel.swift in Sources */,
+				304AD30F26D4300300915013 /* JsonStructs.swift in Sources */,
+				304AD30D26D42FF500915013 /* CodableExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,7 +479,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Apple-Developer-Academy-PUC-RIO.KabumAppiOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -470,7 +498,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Apple-Developer-Academy-PUC-RIO.KabumAppiOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
