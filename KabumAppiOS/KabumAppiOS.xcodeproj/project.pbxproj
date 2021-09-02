@@ -20,6 +20,7 @@
 		304AD31326DAF8E600915013 /* ProductView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD31226DAF8E600915013 /* ProductView.swift */; };
 		304AD31526DAF8F900915013 /* ProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD31426DAF8F900915013 /* ProductCollectionViewCell.swift */; };
 		304AD31826DAFDB600915013 /* APIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD31726DAFDB600915013 /* APIController.swift */; };
+		30F503EB26E062AE009CD8D4 /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F503EA26E062AE009CD8D4 /* UIFontExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		304AD31226DAF8E600915013 /* ProductView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductView.swift; sourceTree = "<group>"; };
 		304AD31426DAF8F900915013 /* ProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		304AD31726DAFDB600915013 /* APIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIController.swift; sourceTree = "<group>"; };
+		30F503EA26E062AE009CD8D4 /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				304AD2DC26D3200D00915013 /* Info.plist */,
+				30F503E926E06291009CD8D4 /* Extensions */,
 				304AD30726D32E9000915013 /* API */,
 				304AD30126D320B000915013 /* Resources */,
 				304AD30026D3207E00915013 /* Model */,
@@ -181,6 +184,14 @@
 				304AD31726DAFDB600915013 /* APIController.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		30F503E926E06291009CD8D4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30F503EA26E062AE009CD8D4 /* UIFontExtensions.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,6 +325,7 @@
 			files = (
 				304AD2D326D3200C00915013 /* ViewController.swift in Sources */,
 				304AD2CF26D3200C00915013 /* AppDelegate.swift in Sources */,
+				30F503EB26E062AE009CD8D4 /* UIFontExtensions.swift in Sources */,
 				304AD2D126D3200C00915013 /* SceneDelegate.swift in Sources */,
 				304AD31826DAFDB600915013 /* APIController.swift in Sources */,
 				304AD30326D32BA500915013 /* ProductModel.swift in Sources */,

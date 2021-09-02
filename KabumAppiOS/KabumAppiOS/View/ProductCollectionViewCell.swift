@@ -22,6 +22,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.contentMode = .scaleToFill
         label.sizeToFit()
+        label.font = .productTitle
         label.textAlignment = .left
         label.textColor = .black
         return label
@@ -32,6 +33,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.contentMode = .scaleToFill
         label.sizeToFit()
+        label.font = .productValue
         label.textAlignment = .left
         label.textColor = .black
         return label
@@ -53,28 +55,37 @@ class ProductCollectionViewCell: UICollectionViewCell {
         contentView.addSubview(productImage)
         layoutSubviews()
         contentView.clipsToBounds = true
+
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
         
         productNameLabel.translatesAutoresizingMaskIntoConstraints = false
-        productNameLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1, constant: 0).isActive = true
-        productNameLabel.heightAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1, constant: 0).isActive = true
-        productNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor ).isActive = true
-        productNameLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        NSLayoutConstraint.activate([
+        productNameLabel.widthAnchor.constraint(equalToConstant: 300),
+        productNameLabel.heightAnchor.constraint(equalToConstant: 15),
+        productNameLabel.leftAnchor.constraint(equalTo: productImage.rightAnchor),
+        productNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
+        productNameLabel.bottomAnchor.constraint(equalTo: productDescriptionLabel.topAnchor)
+        ])
         
         productDescriptionLabel.translatesAutoresizingMaskIntoConstraints = false
-        productDescriptionLabel.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1, constant: 0).isActive = true
-        productDescriptionLabel.topAnchor.constraint(equalTo: productNameLabel.bottomAnchor, constant: 0 ).isActive = true
-        productDescriptionLabel.bottomAnchor.constraint(equalTo: productNameLabel.topAnchor, constant: 1).isActive = true
-        productDescriptionLabel.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        NSLayoutConstraint.activate([
+        productDescriptionLabel.widthAnchor.constraint(equalToConstant: 300),
+        productDescriptionLabel.heightAnchor.constraint(equalToConstant: 15),
+        productDescriptionLabel.leftAnchor.constraint(equalTo: productImage.rightAnchor),
+        productDescriptionLabel.topAnchor.constraint(equalTo: productNameLabel.bottomAnchor),
+        //productDescriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
         
         productImage.translatesAutoresizingMaskIntoConstraints = false
-        productImage.widthAnchor.constraint(equalTo: contentView.widthAnchor, multiplier: 1, constant: 0).isActive = true
-        productImage.topAnchor.constraint(equalTo: productDescriptionLabel.bottomAnchor, constant: 0 ).isActive = true
-        productImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: 0).isActive = true
-        productImage.centerXAnchor.constraint(equalTo: contentView.centerXAnchor).isActive = true
+        NSLayoutConstraint.activate([
+        productImage.widthAnchor.constraint(equalToConstant: 200),
+        productImage.heightAnchor.constraint(equalToConstant: 200),
+        productImage.topAnchor.constraint(equalTo: contentView.topAnchor),
+        productImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        ])
     }
     
     required init?(coder: NSCoder) {
@@ -83,7 +94,7 @@ class ProductCollectionViewCell: UICollectionViewCell {
     
     public func updateCellProperties(_ produto: Produto){
         productNameLabel.text = produto.nome
-        productDescriptionLabel.text = produto.linkDescricao
+        productDescriptionLabel.text = "R$: \(produto.preco)"
         productImage.image = UIImage(systemName: productDefaultImageName)
 
 //        let imageSize = 2 * Int(UIScreen.main.bounds.width / 2.5)

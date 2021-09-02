@@ -17,16 +17,16 @@ class ProductView: UIView {
     lazy var collection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         
-        let itemSquareSize = UIScreen.main.bounds.width / 0.8
+        let itemSquareSize = UIScreen.main.bounds.width
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
-       // layout.sectionInset = UIEdgeInsets(top: 25, left: 16, bottom: 20, right: 16)
-        layout.itemSize = CGSize(width: itemSquareSize + 10, height: itemSquareSize + 40)
-        layout.estimatedItemSize = .zero
+        layout.sectionInset = UIEdgeInsets(top: 25, left: 16, bottom: 20, right: 16)
+        layout.itemSize = CGSize(width: itemSquareSize - 26, height: 200)
+        //layout.estimatedItemSize = .zero
         collection.alwaysBounceVertical = true
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
