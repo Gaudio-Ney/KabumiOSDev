@@ -19,18 +19,22 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.title = "Em destaque"
+        navigationController?.navigationBar.prefersLargeTitles = true
+    
         let url = "https://servicespub.prod.api.aws.grupokabum.com.br/home/v1/home/produto"
         getData(from: url)
-        view.backgroundColor = .white
+        view.backgroundColor = .backgroudHomeColor
         productView.collection.dataSource = self
+        
         view.addSubview(productView)
         setConstraints()
     }
     
     func setConstraints() {
-        productView.backgroundColor = .red
+        productView.backgroundColor = .backgroudHomeColor
         NSLayoutConstraint.activate([
-            productView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor),
+            productView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 8),
             productView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             productView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             productView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
@@ -72,5 +76,24 @@ extension ViewController: UICollectionViewDataSource{
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? ProductCollectionViewCell else { fatalError("Faild loading ProductCollectionViewCell") }
         cell.updateCellProperties(self.product[indexPath.row])
         return cell
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        ///TO DO: Check if the header is a CollectionView.
+//        return nil
+//    }
+}
+
+extension UIImageView {
+    func load(url: URL) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: url) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self?.image = image
+                    }
+                }
+            }
+        }
     }
 }

@@ -11,7 +11,11 @@ import UIKit
 class ProductCollectionViewCell: UICollectionViewCell, CodeView {
     
     //MARK: - Properties
-    public var cellSelected: Bool = false
+    var buyButton = BuyButtonView()
+    
+    var heartButton = HeartButtonView()
+    
+    var cartButton = ShoppingCartButtonView()
     
     public static let identifier = "CollectionViewCell"
     
@@ -35,82 +39,152 @@ class ProductCollectionViewCell: UICollectionViewCell, CodeView {
         label.sizeToFit()
         label.font = .productTitle
         label.textAlignment = .left
-        label.textColor = .black
-        label.numberOfLines = 0
+        label.textColor = .productTitleColor
+        label.numberOfLines = 3
         label.lineBreakMode = .byWordWrapping
         return label
     }()
     
-    var productDescriptionLabel: UILabel = {
+    var productValueLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.contentMode = .scaleToFill
         label.sizeToFit()
         label.font = .productValue
         label.textAlignment = .left
-        label.textColor = .black
+        label.textColor = .primaryOrange
         return label
     }()
     
+    let imageContainer: UIView = {
+        
+        let view = UIView(frame: .zero)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+        
+    }()
+    
     var productImage: UIImageView = {
+        
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 20
-        imageView.contentMode = .scaleToFill
         return imageView
     }()
     
     override init (frame: CGRect) {
         super.init(frame: frame)
+        buyButton.addTarget(self, action: #selector(onTapBuyButton), for: .touchUpInside)
         setupView()
     }
     
     func setupAdditionalConfiguration() {
-        contentView.clipsToBounds = true
-        manufacturerNameLabel.backgroundColor = .red
-        productNameLabel.backgroundColor = .green
-        productDescriptionLabel.backgroundColor = .yellow
-        productImage.backgroundColor = .gray
-        self.backgroundColor = .black
+        
+        ///Add corner and shadow to imageContainer"
+        imageContainer.clipsToBounds = false
+        imageContainer.layer.shadowColor = UIColor.black.cgColor
+        imageContainer.layer.shadowOpacity = 0.5
+        imageContainer.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        imageContainer.layer.shadowRadius = 2
+        imageContainer.layer.masksToBounds = false
+        imageContainer.layer.shadowPath = UIBezierPath(roundedRect: imageContainer.bounds, cornerRadius: 8).cgPath
+        
+        productImage.contentMode = .scaleToFill
+        productImage.clipsToBounds = true
+        productImage.layer.cornerRadius = 8
+        
+        ///Add corner and shadow to Cell:
+        self.layer.cornerRadius = 8
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.clear.cgColor
+
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        self.layer.shadowRadius = 2.0
+        self.layer.shadowOpacity = 0.5
+        self.layer.masksToBounds = false
+        self.layer.shadowPath = UIBezierPath(roundedRect: self.bounds, cornerRadius: self.layer.cornerRadius).cgPath
+        
+        productImage.backgroundColor = .secondGray
+        self.backgroundColor = .backgroudCollectionCellColor
     }
     
     func buildViewHierarchy() {
         contentView.addSubview(manufacturerNameLabel)
         contentView.addSubview(productNameLabel)
-        contentView.addSubview(productDescriptionLabel)
-        contentView.addSubview(productImage)
+        contentView.addSubview(productValueLabel)
+        contentView.addSubview(imageContainer)
+        contentView.addSubview(buyButton)
+        contentView.addSubview(cartButton)
+        contentView.addSubview(heartButton)
+        imageContainer.addSubview(productImage)
     }
     
     func setupConstraints() {
+        
+        ///Setup imageContainer Constraints
         NSLayoutConstraint.activate([
-            manufacturerNameLabel.heightAnchor.constraint(equalToConstant: 15),
-            manufacturerNameLabel.leadingAnchor.constraint(equalTo: productImage.trailingAnchor),
-            manufacturerNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            manufacturerNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 15),
+            imageContainer.widthAnchor.constraint(equalToConstant: 150),
+            imageContainer.heightAnchor.constraint(equalToConstant: 150),
+            imageContainer.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
+            imageContainer.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
+        ])
+        
+        ///Setup image Constraints
+        NSLayoutConstraint.activate([
+            productImage.widthAnchor.constraint(equalTo: imageContainer.widthAnchor),
+            productImage.heightAnchor.constraint(equalTo: imageContainer.heightAnchor),
+            productImage.leadingAnchor.constraint(equalTo: imageContainer.leadingAnchor),
+            productImage.centerYAnchor.constraint(equalTo: imageContainer.centerYAnchor)
+        ])
+        
+        ///Setup manufacturer name Constraints
+        NSLayoutConstraint.activate([
+            manufacturerNameLabel.leadingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: 8),
+            manufacturerNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: 8),
+            manufacturerNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 8)
+        ])
+        
+        ///Setup product name Constraints
+        NSLayoutConstraint.activate([
+            productNameLabel.leadingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: 8),
+            productNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8),
+            productNameLabel.topAnchor.constraint(equalTo: manufacturerNameLabel.bottomAnchor, constant: 2)
+        ])
+        
+        ///Setup product value Constraints
+        NSLayoutConstraint.activate([
+            productValueLabel.leadingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: 8),
+            productValueLabel.topAnchor.constraint(equalTo: productNameLabel.bottomAnchor, constant: 12)
         ])
         
         NSLayoutConstraint.activate([
-            productNameLabel.leadingAnchor.constraint(equalTo: productImage.trailingAnchor),
-            productNameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor),
-            productNameLabel.topAnchor.constraint(equalTo: manufacturerNameLabel.bottomAnchor, constant: 10)
+            buyButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16),
+            buyButton.leadingAnchor.constraint(equalTo: productImage.trailingAnchor, constant: 8),
+            buyButton.heightAnchor.constraint(equalToConstant: 24),
+            buyButton.trailingAnchor.constraint(equalTo: heartButton.leadingAnchor, constant: -8)
         ])
         
         NSLayoutConstraint.activate([
-            productDescriptionLabel.widthAnchor.constraint(equalToConstant: 300),
-            productDescriptionLabel.heightAnchor.constraint(equalToConstant: 15),
-            productDescriptionLabel.leadingAnchor.constraint(equalTo: productImage.trailingAnchor),
-            productDescriptionLabel.topAnchor.constraint(equalTo: productNameLabel.bottomAnchor, constant: 10),
-            productDescriptionLabel.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            heartButton.trailingAnchor.constraint(equalTo: cartButton.leadingAnchor, constant: -8),
+            heartButton.widthAnchor.constraint(equalToConstant: 24),
+            heartButton.heightAnchor.constraint(equalToConstant: 24),
+            heartButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16)
+
         ])
         
         NSLayoutConstraint.activate([
-            productImage.widthAnchor.constraint(equalToConstant: 150),
-            productImage.heightAnchor.constraint(equalToConstant: 150),
-            productImage.leadingAnchor.constraint(equalTo: contentView.leadingAnchor),
-            productImage.topAnchor.constraint(equalTo: contentView.topAnchor),
-            productImage.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+            cartButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -16),
+            cartButton.widthAnchor.constraint(equalToConstant: 24),
+            cartButton.heightAnchor.constraint(equalToConstant: 24),
+            cartButton.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -16)
         ])
+    }
+    
+    @objc func onTapBuyButton() {
+        
+        buyButton.isSelected.toggle()
+        buyButton.backgroundColor = buyButton.isSelected ? .primaryOrange : .secondGray
+        
     }
     
     required init?(coder: NSCoder) {
@@ -118,10 +192,10 @@ class ProductCollectionViewCell: UICollectionViewCell, CodeView {
     }
     
     public func updateCellProperties(_ produto: Produto){
-        manufacturerNameLabel.text = produto.fabricante.nome
+        manufacturerNameLabel.text = produto.fabricante.nome.uppercased()
         productNameLabel.text = produto.nome
-        productDescriptionLabel.text = "R$: \(produto.preco)"
-        productImage.image = UIImage(systemName: productDefaultImageName)
+        productValueLabel.text = "R$: \(produto.preco)"
+        productImage.load(url: URL(string: produto.img)!)
         
         //        let imageSize = 2 * Int(UIScreen.main.bounds.width / 2.5)
         //        _ = produto.img.replacingOccurrences(of: "{w}", with: "\(imageSize)").replacingOccurrences(of: "{h}", with: "\(imageSize)")

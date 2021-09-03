@@ -17,18 +17,17 @@ class ProductView: UIView, CodeView {
     var collection: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         
-        let itemSquareSize = UIScreen.main.bounds.width
+        let mainScreenWidth = UIScreen.main.bounds.width
         
         let collection = UICollectionView(frame: .zero, collectionViewLayout: layout)
         
         collection.translatesAutoresizingMaskIntoConstraints = false
         
         layout.scrollDirection = .vertical
-        layout.minimumLineSpacing = 1
-        layout.minimumInteritemSpacing = 1
+        layout.minimumLineSpacing = 8
+        layout.minimumInteritemSpacing = 8
         layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.itemSize = CGSize(width: itemSquareSize, height: 200)
-        //layout.estimatedItemSize = .zero
+        layout.itemSize = CGSize(width: mainScreenWidth - 16, height: 160)
         collection.alwaysBounceVertical = true
         collection.translatesAutoresizingMaskIntoConstraints = false
         collection.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
@@ -52,15 +51,16 @@ class ProductView: UIView, CodeView {
             [
                 collection.topAnchor.constraint(equalTo: self.layoutMarginsGuide.topAnchor),
                 collection.bottomAnchor.constraint(equalTo: self.bottomAnchor),
-                collection.leftAnchor.constraint(equalTo: self.leftAnchor),
-                collection.rightAnchor.constraint(equalTo: self.rightAnchor)
+                collection.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+                collection.trailingAnchor.constraint(equalTo: self.trailingAnchor)
             ]
         )
     }
     
     func setupAdditionalConfiguration() {
         collection.register(ProductCollectionViewCell.self, forCellWithReuseIdentifier: ProductCollectionViewCell.identifier)
-        collection.backgroundColor = .white
+        collection.backgroundColor = .clear
+        collection.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 8, right: 0)
     }
     
     
