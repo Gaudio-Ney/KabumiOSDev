@@ -13,8 +13,8 @@ import UIKit
 class ViewController: UIViewController {
     
     var productView = ProductView(frame: .zero)
-    var apiController: APIController?
     public var product = [Produto]()
+    public var manufacturer = [Fabricante]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +32,8 @@ class ViewController: UIViewController {
         NSLayoutConstraint.activate([
             productView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor),
             productView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
-            productView.leftAnchor.constraint(equalTo: self.view.leftAnchor),
-            productView.rightAnchor.constraint(equalTo: self.view.rightAnchor)
+            productView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            productView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
         ])
     }
     
