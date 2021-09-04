@@ -71,12 +71,16 @@ class ProductCollectionViewCell: UICollectionViewCell, CodeView {
         return imageView
     }()
     
+    
+    
     override init (frame: CGRect) {
         super.init(frame: frame)
         buyButton.addTarget(self, action: #selector(onTapBuyButton), for: .touchUpInside)
         setupView()
     }
     
+    //MARK: - Methods
+
     func setupAdditionalConfiguration() {
         
         ///Add corner and shadow to imageContainer"

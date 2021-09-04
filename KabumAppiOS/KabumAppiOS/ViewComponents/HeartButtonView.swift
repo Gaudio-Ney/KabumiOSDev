@@ -9,7 +9,7 @@ import Foundation
 
 import UIKit
 
-/// Set the button that assumes different states.
+/// Setup of the Heart Button View .
 class HeartButtonView: UIButton {
     
     // MARK: - Initializers

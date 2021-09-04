@@ -8,6 +8,8 @@
 import Foundation
 
 // MARK: - Produto
+
+///Set the Produto properties and its Coding Keys.
 struct Produto: Codable {
     let codigo: Int
     let img: String
@@ -22,12 +24,12 @@ struct Produto: Codable {
     let fabricante: Fabricante
     let menu: String
     let disponibilidade: Bool
-//    let oferta: Oferta
     let vendedorNome: String
     let offerID: OfferID
     let idSeller: Int
     let porcentagemDesconto: String
 
+    ///Translate the Json properties to the Swift variables.
     enum CodingKeys: String, CodingKey {
         case codigo, img, nome, alt
         case temFreteGratis = "tem_frete_gratis"
@@ -45,7 +47,7 @@ struct Produto: Codable {
         case avaliacaoNumero = "avaliacao_numero"
         case avaliacaoNota = "avaliacao_nota"
         case isOpenbox = "is_openbox"
-        case fabricante, menu, disponibilidade//, oferta
+        case fabricante, menu, disponibilidade
         case vendedorNome = "vendedor_nome"
         case offerID = "offer_id"
         case idSeller = "id_seller"

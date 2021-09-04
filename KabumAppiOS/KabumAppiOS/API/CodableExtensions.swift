@@ -2,9 +2,7 @@
 //  CodableExtension.swift
 //  JsonClassSaver
 //
-//  Created by Ricardo Venieris on 30/11/18.
-//  Copyright © 2018 LES.PUC-RIO. All rights reserved.
-//
+//  Created by Gáudio Ney on 22/08/21.
 
 import CloudKit // For decode CKAsset as a valid Data type convertible to otiginal asset type
 import os.log
@@ -23,8 +21,9 @@ extension Error {
 	}
 }
 
+
 extension Encodable {
-	
+
 	private var jSONSerializationDefaultReadingOptions:JSONSerialization.ReadingOptions {
 		[JSONSerialization.ReadingOptions.allowFragments, JSONSerialization.ReadingOptions.mutableContainers, JSONSerialization.ReadingOptions.mutableLeaves]
 	}

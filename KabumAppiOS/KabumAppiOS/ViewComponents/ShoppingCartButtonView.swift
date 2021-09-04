@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+///Setup of the Shopping Cart Button View.
 class ShoppingCartButtonView: UIButton {
     
     // MARK: - Initializers

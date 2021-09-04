@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-/// Set the button that assumes different states.
+/// Setup of the Buy Button View.
 class BuyButtonView: UIButton {
     
     // MARK: - Initializers

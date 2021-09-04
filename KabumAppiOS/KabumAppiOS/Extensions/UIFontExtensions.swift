@@ -9,6 +9,7 @@ import UIKit
 
 extension UIFont {
     
+    /// Returns the "Manufacturer Title" UIFont configuration.
     public class var manufacturerTitle: UIFont {
         if let descriptor = UIFont.systemFont(ofSize: 10, weight: .thin).fontDescriptor.withDesign(.default) {
             return UIFontMetrics.default.scaledFont(for: UIFont(descriptor: descriptor, size: 10))
@@ -26,6 +27,7 @@ extension UIFont {
         }
     }
     
+    /// Returns the "Product Value Title" UIFont configuration.
     public class var productValue: UIFont {
         if let descriptor = UIFont.systemFont(ofSize: 15, weight: .bold).fontDescriptor.withDesign(.rounded) {
             return UIFontMetrics.default.scaledFont(for: UIFont(descriptor: descriptor, size: 15))
@@ -33,6 +35,8 @@ extension UIFont {
             return UIFont.systemFont(ofSize: 15, weight: .bold)
         }
     }
+    
+    /// Returns the "Buy Button Title" UIFont configuration.
     public class var buyButtonTitle: UIFont {
         if let descriptor = UIFont.systemFont(ofSize: 15, weight: .regular).fontDescriptor.withDesign(.rounded) {
             return UIFontMetrics.default.scaledFont(for: UIFont(descriptor: descriptor, size: 15))

@@ -4,17 +4,22 @@
 //
 //  Created by Gáudio Ney on 22/08/21.
 //
-/*
- 
- */
+
 
 import UIKit
 
+///ViewController of the ProductCollectionView.
 class ViewController: UIViewController {
     
+    //MARK: - Properties
+
     var productView = ProductView(frame: .zero)
+   
     public var product = [Produto]()
+    
     public var manufacturer = [Fabricante]()
+    
+    //MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,32 +46,44 @@ class ViewController: UIViewController {
         ])
     }
     
-    public func getData (from url: String) {
-        URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: {data, response, error in
-            
-            guard let data = data, error == nil else {
-                print ("Something Wrong!")
-                return
-            }
-            
-            guard let request = try? Request.load(from: data) else {
-                print ("Faild to convert \(String(describing: error?.localizedDescription))")
-                return
-            }
-            
-            request.produtos.forEach {_ in self.product.append(contentsOf: request.produtos)}
-            self.onLoad()
-            dump(self.product)
-        }).resume()
-    }
-    
     func onLoad() {
         DispatchQueue.main.async {
             self.productView.collection.reloadData()
         }
     }
+    
+    //MARK: - Public Methods
+    
+    ///
+    ///
+    /// - Parameter url: url that opens the Jason API.
+    public func getData (from url: String) {
+        URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: {data, response, error in
+            
+            ///Tries to access the url Data and hold it at data variable in Swift.
+            guard let data = data, error == nil else {
+                print ("Faild to access the URL data provided. Pleas check if the link still online and working well.")
+                return
+            }
+            
+            ////Tries to convert the data to a Json format and hold it at resques variable.
+            guard let request = try? Request.load(from: data) else {
+                print ("Faild to convert \(String(describing: error?.localizedDescription))")
+                return
+            }
+            
+            ///Add each item of products provided by the request into the Array (product) of Produtos.
+            request.produtos.forEach {_ in self.product.append(contentsOf: request.produtos)}
+            
+            ///Call the funcition thar reload the data async.
+            self.onLoad()
+        }).resume()
+    }
 }
 
+// MARK: - Extensions
+
+///Extension of UICollectionViewDataSource that set the number of lines of the CollectionView and the Item index at each Cell.
 extension ViewController: UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.product.count
@@ -77,13 +94,20 @@ extension ViewController: UICollectionViewDataSource{
         cell.updateCellProperties(self.product[indexPath.row])
         return cell
     }
+
+    //TODO: - Check if the header is a CollectionView.
     
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        ///TO DO: Check if the header is a CollectionView.
+//    func collectionView(
+//    _ collectionView: UICollectionView,
+//    viewForSupplementaryElementOfKind kind: String,
+//    at indexPath: IndexPath
+//    ) -> UICollectionReusableView {
 //        return nil
 //    }
 }
 
+///Try to catch and convert the Image URL (as a String) to a UIImage.
+///And make it async only not in the Main thread.
 extension UIImageView {
     func load(url: URL) {
         DispatchQueue.global().async { [weak self] in

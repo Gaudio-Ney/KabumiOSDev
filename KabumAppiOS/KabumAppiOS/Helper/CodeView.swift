@@ -7,6 +7,8 @@
 
 import Foundation
 
+
+/// Protocol that set the necessary functions to build UIViews Hierarchy,  Constraints and Additional Configurations.
 protocol CodeView {
     func buildViewHierarchy()
     func setupConstraints()

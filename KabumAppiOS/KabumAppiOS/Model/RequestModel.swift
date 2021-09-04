@@ -1,25 +1,22 @@
 //
-//  JsonStructs.swift
-//  Testes CommandLine
+//  RequestModel.swift
+//  KabumAppiOS
 //
-//  Created by Ricardo Venieris on 23/08/21.
+//  Created by Gáudio Ney on 23/08/21.
 //
-
-import Foundation
-
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let welcome = try? newJSONDecoder().decode(Welcome.self, from: jsonData)
 
 import Foundation
 
 // MARK: - Welcome
+
+/// Set the Request properties and its Coding Keys.
+/// The reques API must hava a "produtos", a "flagBlackfriday" and "sucesso" parameters.
 struct Request: Codable {
     let produtos: [Produto]
     let flagBlackfriday: Int
     let sucesso: Bool
 
+    ///Translate the Json properties to the Swift variables.
     enum CodingKeys: String, CodingKey {
         case produtos
         case flagBlackfriday = "flag_blackfriday"
