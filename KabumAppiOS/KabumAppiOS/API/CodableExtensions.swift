@@ -2,7 +2,9 @@
 //  CodableExtension.swift
 //  JsonClassSaver
 //
-//  Created by Gáudio Ney on 22/08/21.
+//  Edited by Gáudio Ney on 22/08/21.
+//  Created by Ricador Venieris on 30/11/18.
+//  Copyright © 2018 LES.PUC-RIO. All rights reserved.
 
 import CloudKit // For decode CKAsset as a valid Data type convertible to otiginal asset type
 import os.log
@@ -14,6 +16,8 @@ enum FileManageError:Error {
 	case canNotDecodeData
 	case canNotEncodeData
 }
+
+//MARK: - Extensions
 
 extension Error {
 	public var asString:String {
@@ -71,7 +75,7 @@ extension Encodable {
 	}
 	
 	func save(in file:String? = nil)throws {
-		// generates URL for documentDir/file.json
+		// Generates URL for documentDir/file.json
 		let documentDir = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString
 		let fileName = file ?? String(describing: type(of: self))
 		let url = URL(fileURLWithPath: documentDir.appendingPathComponent(fileName+".json"))
@@ -194,7 +198,6 @@ extension Decodable {
 	}
 	
 }
-
 
 /// Type Extensions
 extension Data {

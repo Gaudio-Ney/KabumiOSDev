@@ -54,9 +54,8 @@ class ViewController: UIViewController {
     
     //MARK: - Public Methods
     
-    ///
-    ///
-    /// - Parameter url: url that opens the Jason API.
+    ///Function that loads the data and tries to convert it to
+    /// - Parameter url: url that opens the JASON API.
     public func getData (from url: String) {
         URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: {data, response, error in
             
@@ -66,7 +65,7 @@ class ViewController: UIViewController {
                 return
             }
             
-            ////Tries to convert the data to a Json format and hold it at resques variable.
+            ////Tries to convert (Decode) the data (Json) to the Structs created based in the Json Properties and hold it at resques variable.
             guard let request = try? Request.load(from: data) else {
                 print ("Faild to convert \(String(describing: error?.localizedDescription))")
                 return

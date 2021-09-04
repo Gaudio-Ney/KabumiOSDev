@@ -18,9 +18,7 @@ class ProductCollectionViewCell: UICollectionViewCell, CodeView {
     var cartButton = ShoppingCartButtonView()
     
     public static let identifier = "CollectionViewCell"
-    
-    let productDefaultImageName = "rectangle.fill"
-    
+        
     var manufacturerNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -57,7 +55,6 @@ class ProductCollectionViewCell: UICollectionViewCell, CodeView {
     }()
     
     let imageContainer: UIView = {
-        
         let view = UIView(frame: .zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -65,17 +62,18 @@ class ProductCollectionViewCell: UICollectionViewCell, CodeView {
     }()
     
     var productImage: UIImageView = {
-        
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    
+    //MARK: - Initializers
     
     override init (frame: CGRect) {
         super.init(frame: frame)
         buyButton.addTarget(self, action: #selector(onTapBuyButton), for: .touchUpInside)
+        heartButton.addTarget(self, action: #selector(onTapHeartButton), for: .touchUpInside)
+        cartButton.addTarget(self, action: #selector(onTapShoppingCartButton), for: .touchUpInside)
         setupView()
     }
     
@@ -191,17 +189,30 @@ class ProductCollectionViewCell: UICollectionViewCell, CodeView {
         
     }
     
+    @objc func onTapHeartButton() {
+        
+        heartButton.isSelected.toggle()
+        heartButton.tintColor = heartButton.isSelected ? .secondGray : .primaryOrange
+        
+    }
+    
+    @objc func onTapShoppingCartButton() {
+        
+        cartButton.isSelected.toggle()
+        cartButton.tintColor = cartButton.isSelected ? .secondGray : .primaryOrange
+        
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
     public func updateCellProperties(_ produto: Produto){
+        
         manufacturerNameLabel.text = produto.fabricante.nome.uppercased()
         productNameLabel.text = produto.nome
         productValueLabel.text = "R$: \(produto.preco)"
         productImage.load(url: URL(string: produto.img)!)
         
-        //        let imageSize = 2 * Int(UIScreen.main.bounds.width / 2.5)
-        //        _ = produto.img.replacingOccurrences(of: "{w}", with: "\(imageSize)").replacingOccurrences(of: "{h}", with: "\(imageSize)")
     }
 }
