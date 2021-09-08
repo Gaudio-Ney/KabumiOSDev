@@ -77,14 +77,16 @@ class ViewController: UIViewController, CodeView, UINavigationBarDelegate {
         navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.tintColor = .white
         
-        //let searchField = searchBar.value(forKey: "searchField") as! UISearchTextField
-        //searchField.tintColor = .white
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: nil)
         
         self.searchBar.delegate = self
         searchBar.tintColor = .white
         searchBar.searchTextField.backgroundColor = .white
         searchBar.searchTextField.placeholder = "Procure no KaBum!"
         navigationItem.titleView = searchBar
+    }
+    
+    @objc func addToShopCart() {
     }
     
     //MARK: - Public Methods
