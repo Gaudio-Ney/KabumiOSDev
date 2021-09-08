@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		301FF92526E83CC4001DD50A /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301FF92426E83CC4001DD50A /* SectionHeaderView.swift */; };
+		301FF92726E8F88A001DD50A /* URLImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301FF92626E8F88A001DD50A /* URLImageExtension.swift */; };
+		301FF92926E8F948001DD50A /* UICollectionViewDelegateFlowLayout_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301FF92826E8F948001DD50A /* UICollectionViewDelegateFlowLayout_ViewController.swift */; };
+		301FF92B26E8F991001DD50A /* UICollectionViewDataSource_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301FF92A26E8F991001DD50A /* UICollectionViewDataSource_ViewController.swift */; };
+		301FF92D26E8FA39001DD50A /* UISearchResultUpdating_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301FF92C26E8FA39001DD50A /* UISearchResultUpdating_ViewController.swift */; };
+		301FF92F26E8FB75001DD50A /* SearchResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301FF92E26E8FB75001DD50A /* SearchResultsViewController.swift */; };
+		301FF93126E905E0001DD50A /* SerachBar_ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301FF93026E905E0001DD50A /* SerachBar_ViewControllerExtension.swift */; };
 		304AD2CF26D3200C00915013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD2CE26D3200C00915013 /* AppDelegate.swift */; };
 		304AD2D126D3200C00915013 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD2D026D3200C00915013 /* SceneDelegate.swift */; };
 		304AD2D326D3200C00915013 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD2D226D3200C00915013 /* ViewController.swift */; };
@@ -48,6 +54,12 @@
 
 /* Begin PBXFileReference section */
 		301FF92426E83CC4001DD50A /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
+		301FF92626E8F88A001DD50A /* URLImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLImageExtension.swift; sourceTree = "<group>"; };
+		301FF92826E8F948001DD50A /* UICollectionViewDelegateFlowLayout_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewDelegateFlowLayout_ViewController.swift; sourceTree = "<group>"; };
+		301FF92A26E8F991001DD50A /* UICollectionViewDataSource_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewDataSource_ViewController.swift; sourceTree = "<group>"; };
+		301FF92C26E8FA39001DD50A /* UISearchResultUpdating_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchResultUpdating_ViewController.swift; sourceTree = "<group>"; };
+		301FF92E26E8FB75001DD50A /* SearchResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultsViewController.swift; sourceTree = "<group>"; };
+		301FF93026E905E0001DD50A /* SerachBar_ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SerachBar_ViewControllerExtension.swift; sourceTree = "<group>"; };
 		304AD2CB26D3200C00915013 /* KabumAppiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KabumAppiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		304AD2CE26D3200C00915013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		304AD2D026D3200C00915013 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				304AD2D226D3200C00915013 /* ViewController.swift */,
+				301FF92E26E8FB75001DD50A /* SearchResultsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -224,6 +237,11 @@
 			children = (
 				30F503EA26E062AE009CD8D4 /* UIFontExtensions.swift */,
 				30C5675626E2C6DE0082C6F8 /* UIColors.swift */,
+				301FF92626E8F88A001DD50A /* URLImageExtension.swift */,
+				301FF92826E8F948001DD50A /* UICollectionViewDelegateFlowLayout_ViewController.swift */,
+				301FF92A26E8F991001DD50A /* UICollectionViewDataSource_ViewController.swift */,
+				301FF92C26E8FA39001DD50A /* UISearchResultUpdating_ViewController.swift */,
+				301FF93026E905E0001DD50A /* SerachBar_ViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -357,14 +375,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				301FF92726E8F88A001DD50A /* URLImageExtension.swift in Sources */,
 				30C5675B26E2D48A0082C6F8 /* ShoppingCartButtonView.swift in Sources */,
 				304AD2D326D3200C00915013 /* ViewController.swift in Sources */,
 				30C5675326E2AC990082C6F8 /* BuyButtonView.swift in Sources */,
+				301FF92926E8F948001DD50A /* UICollectionViewDelegateFlowLayout_ViewController.swift in Sources */,
 				304AD2CF26D3200C00915013 /* AppDelegate.swift in Sources */,
+				301FF93126E905E0001DD50A /* SerachBar_ViewControllerExtension.swift in Sources */,
 				30F503EB26E062AE009CD8D4 /* UIFontExtensions.swift in Sources */,
 				304AD2D126D3200C00915013 /* SceneDelegate.swift in Sources */,
 				304AD30326D32BA500915013 /* ProductModel.swift in Sources */,
 				30C5675926E2D3AF0082C6F8 /* HeartButtonView.swift in Sources */,
+				301FF92D26E8FA39001DD50A /* UISearchResultUpdating_ViewController.swift in Sources */,
 				30C5674D26E1B96A0082C6F8 /* ManufacturerModel.swift in Sources */,
 				301FF92526E83CC4001DD50A /* SectionHeaderView.swift in Sources */,
 				30C5675026E1BA4D0082C6F8 /* CodeView.swift in Sources */,
@@ -373,6 +395,8 @@
 				30C5675726E2C6DE0082C6F8 /* UIColors.swift in Sources */,
 				304AD31526DAF8F900915013 /* ProductCollectionViewCell.swift in Sources */,
 				304AD30D26D42FF500915013 /* CodableExtensions.swift in Sources */,
+				301FF92F26E8FB75001DD50A /* SearchResultsViewController.swift in Sources */,
+				301FF92B26E8F991001DD50A /* UICollectionViewDataSource_ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
