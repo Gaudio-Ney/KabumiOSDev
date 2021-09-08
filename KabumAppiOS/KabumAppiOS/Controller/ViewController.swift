@@ -12,34 +12,39 @@ import UIKit
 class ViewController: UIViewController {
     
     //MARK: - Properties
-
+    
     var productView = ProductView(frame: .zero)
-   
+    
     public var product = [Produto]()
     
     public var manufacturer = [Fabricante]()
+        
+    let searchBarController = UISearchController()
     
     //MARK: - Methods
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Em destaque"
-        navigationController?.navigationBar.prefersLargeTitles = true
-    
         let url = "https://servicespub.prod.api.aws.grupokabum.com.br/home/v1/home/produto"
         getData(from: url)
         view.backgroundColor = .backgroudHomeColor
         productView.collection.dataSource = self
-        
+        productView.collection.delegate = self
+        productView.collection.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader")
+        productView.backgroundColor = .backgroudHomeColor
         view.addSubview(productView)
+        navigationItem.searchController = searchBarController
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationController?.navigationBar.barTintColor = .primaryBlue
+        searchBarController.searchBar.barTintColor = .white
         setConstraints()
     }
     
     func setConstraints() {
-        productView.backgroundColor = .backgroudHomeColor
+        
         NSLayoutConstraint.activate([
-            productView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 8),
+            productView.topAnchor.constraint(equalTo: self.view.topAnchor),
             productView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
             productView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             productView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)
@@ -83,7 +88,7 @@ class ViewController: UIViewController {
 // MARK: - Extensions
 
 ///Extension of UICollectionViewDataSource that set the number of lines of the CollectionView and the Item index at each Cell.
-extension ViewController: UICollectionViewDataSource{
+extension ViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.product.count
     }
@@ -93,16 +98,22 @@ extension ViewController: UICollectionViewDataSource{
         cell.updateCellProperties(self.product[indexPath.row])
         return cell
     }
-
+    
     //TODO: - Check if the header is a CollectionView.
     
-//    func collectionView(
-//    _ collectionView: UICollectionView,
-//    viewForSupplementaryElementOfKind kind: String,
-//    at indexPath: IndexPath
-//    ) -> UICollectionReusableView {
-//        return nil
-//    }
+    func collectionView(
+        _ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+
+        if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader", for: indexPath) as? SectionHeader{
+            sectionHeader.label.text = "Em destaque"
+            return sectionHeader
+        }
+        return UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return CGSize(width: collectionView.frame.width, height: 40)
+    }
 }
 
 ///Try to catch and convert the Image URL (as a String) to a UIImage.

@@ -19,6 +19,9 @@ extension UIColor {
     /// Holds the "Main Orange Color" UIColor configuration.
     static var primaryOrange = UIColor(red: 255/255, green: 92/255, blue: 36/255, alpha: 1)
     
+    /// Holds the "Main Blue Color" UIColor configuration.
+    static var primaryBlue = UIColor(red: 0/255, green: 87/255, blue: 164/255, alpha: 1)
+    
     /// Holds the "Product Title Color" UIColor configuration.
     static var productTitleColor = UIColor(red: 76/255, green: 76/255, blue: 76/255, alpha: 1)
     

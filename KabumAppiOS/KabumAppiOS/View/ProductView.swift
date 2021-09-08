@@ -5,9 +5,7 @@
 //  Created by Gáudio Ney on 28/08/21.
 //
 
-import Foundation
 import UIKit
-
 
 ///CollectionView that shows the all the products provided by the API Request into the Collection Cells.
 class ProductView: UIView, CodeView {

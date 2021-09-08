@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		301FF92526E83CC4001DD50A /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301FF92426E83CC4001DD50A /* SectionHeaderView.swift */; };
 		304AD2CF26D3200C00915013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD2CE26D3200C00915013 /* AppDelegate.swift */; };
 		304AD2D126D3200C00915013 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD2D026D3200C00915013 /* SceneDelegate.swift */; };
 		304AD2D326D3200C00915013 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304AD2D226D3200C00915013 /* ViewController.swift */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		301FF92426E83CC4001DD50A /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		304AD2CB26D3200C00915013 /* KabumAppiOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KabumAppiOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		304AD2CE26D3200C00915013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		304AD2D026D3200C00915013 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 			children = (
 				304AD31226DAF8E600915013 /* ProductView.swift */,
 				304AD31426DAF8F900915013 /* ProductCollectionViewCell.swift */,
+				301FF92426E83CC4001DD50A /* SectionHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 				304AD30326D32BA500915013 /* ProductModel.swift in Sources */,
 				30C5675926E2D3AF0082C6F8 /* HeartButtonView.swift in Sources */,
 				30C5674D26E1B96A0082C6F8 /* ManufacturerModel.swift in Sources */,
+				301FF92526E83CC4001DD50A /* SectionHeaderView.swift in Sources */,
 				30C5675026E1BA4D0082C6F8 /* CodeView.swift in Sources */,
 				304AD30F26D4300300915013 /* RequestModel.swift in Sources */,
 				304AD31326DAF8E600915013 /* ProductView.swift in Sources */,

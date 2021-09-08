@@ -5,7 +5,6 @@
 //  Created by Gáudio Ney on 28/08/21.
 //
 
-import Foundation
 import UIKit
 
 class ProductCollectionViewCell: UICollectionViewCell, CodeView {
@@ -201,6 +200,12 @@ class ProductCollectionViewCell: UICollectionViewCell, CodeView {
         cartButton.isSelected.toggle()
         cartButton.tintColor = cartButton.isSelected ? .secondGray : .primaryOrange
         
+    }
+    
+    override func prepareForReuse() {
+        self.productImage.image = nil
+        self.productNameLabel.text = nil
+        self.productValueLabel.text = nil
     }
     
     required init?(coder: NSCoder) {
