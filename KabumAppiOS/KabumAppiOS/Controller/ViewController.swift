@@ -5,7 +5,6 @@
 //  Created by Gáudio Ney on 22/08/21.
 //
 
-
 import UIKit
 
 ///ViewController of the ProductCollectionView.

@@ -10,7 +10,6 @@ import UIKit
 extension ViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("Clicked")
         searchBar.becomeFirstResponder()
     }
     
@@ -18,19 +17,13 @@ extension ViewController: UISearchBarDelegate {
         searchBar.showsCancelButton = false
         searchBar.text = nil
         searchBar.endEditing(true)
-        print("Cancel Clicked")
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        print("search end editing.")
-    }
-    
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        print("Mudou")
+        ///TODO: Implement API Request for the characters.
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchBar.showsCancelButton = true
-        print("Começou a digitar")
     }
 }
