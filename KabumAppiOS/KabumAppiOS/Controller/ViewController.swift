@@ -56,7 +56,7 @@ class ViewController: UIViewController, CodeView, UINavigationBarDelegate {
     func setupAdditionalConfiguration() {
 
         ///Call the function that get the dat from the given URL.
-        let url = "https://servicespub.prod.api.aws.grupokabum.com.br/home/v1/home/produto"
+        let url = "https://servicespub.prod.api.aws.grupokabum.com.br/home/v1/home/produto?app:1"
         getData(from: url)
         
         ///Set the main view background and the CollectionView color.
