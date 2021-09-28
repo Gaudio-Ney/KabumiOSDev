@@ -55,8 +55,16 @@ class ViewController: UIViewController, CodeView, UINavigationBarDelegate {
     func setupAdditionalConfiguration() {
 
         ///Call the function that get the dat from the given URL.
-        let url = "https://servicespub.prod.api.aws.grupokabum.com.br/home/v1/home/produto?app:1"
-        getData(from: url)
+        DataProvider.shared.getData() { [weak self] products in
+            if let strongSelf = self,
+                let fetchedProducts = products {
+                strongSelf.product = fetchedProducts
+                strongSelf.onLoad()
+            }
+            else {
+                ///TODO: show alert.
+            }
+        }
         
         ///Set the main view background and the CollectionView color.
         view.backgroundColor = .backgroudHomeColor
@@ -70,12 +78,16 @@ class ViewController: UIViewController, CodeView, UINavigationBarDelegate {
         productView.collection.register(SectionHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "SectionHeader")
         
         ///Setup the SearchBar and NavigationBar configurations.
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .primaryBlue
+        navigationController?.navigationBar.standardAppearance = appearance;
+        navigationController?.navigationBar.scrollEdgeAppearance = navigationController?.navigationBar.standardAppearance
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationController?.navigationBar.isTranslucent = false
-        navigationController?.navigationBar.barTintColor = .primaryBlue
+//        navigationController?.navigationBar.barTintColor = .primaryBlue
         navigationController?.navigationBar.barStyle = .black
         navigationController?.navigationBar.tintColor = .white
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "cart.fill"), style: .plain, target: self, action: nil)
         
         self.searchBar.delegate = self
@@ -86,32 +98,5 @@ class ViewController: UIViewController, CodeView, UINavigationBarDelegate {
     }
     
     @objc func addToShopCart() {
-    }
-    
-    //MARK: - Public Methods
-    
-    ///Function that loads the data and tries to convert it to
-    /// - Parameter url: url that opens the JASON API.
-    public func getData (from url: String) {
-        URLSession.shared.dataTask(with: URL(string: url)!, completionHandler: {data, response, error in
-            
-            ///Tries to access the url Data and hold it at data variable in Swift.
-            guard let data = data, error == nil else {
-                print ("Faild to access the URL data provided. Pleas check if the link still online and working well.")
-                return
-            }
-            
-            ////Tries to convert (Decode) the data (Json) to the Structs created based in the Json Properties and hold it at resques variable.
-            guard let request = try? Request.load(from: data) else {
-                print ("Faild to convert \(String(describing: error?.localizedDescription))")
-                return
-            }
-            
-            ///Add each item of products provided by the request into the Array (product) of Produtos.
-            request.produtos.forEach {_ in self.product.append(contentsOf: request.produtos)}
-            
-            ///Call the funcition thar reload the data async.
-            self.onLoad()
-        }).resume()
     }
 }
